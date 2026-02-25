@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class PalindromeCheckerApp {
 
-    // Node class for Singly Linked List
     static class Node {
         char data;
         Node next;
@@ -20,7 +19,6 @@ public class PalindromeCheckerApp {
         System.out.print("Input : ");
         String input = scanner.nextLine();
 
-        // Convert string to linked list
         Node head = null, tail = null;
 
         for (int i = 0; i < input.length(); i++) {
@@ -37,19 +35,16 @@ public class PalindromeCheckerApp {
 
         boolean isPalindrome = isPalindrome(head);
 
-        // Required output format
         System.out.println("Is Palindrome? : " + isPalindrome);
 
         scanner.close();
     }
 
-    // Function to check palindrome using linked list logic
     public static boolean isPalindrome(Node head) {
 
         if (head == null || head.next == null)
             return true;
 
-        // Step 1: Find middle using Fast & Slow pointer
         Node slow = head;
         Node fast = head;
 
@@ -58,7 +53,6 @@ public class PalindromeCheckerApp {
             fast = fast.next.next;
         }
 
-        // Step 2: Reverse second half
         Node prev = null;
         Node current = slow;
 
@@ -69,7 +63,6 @@ public class PalindromeCheckerApp {
             current = nextNode;
         }
 
-        // Step 3: Compare both halves
         Node firstHalf = head;
         Node secondHalf = prev;
 
